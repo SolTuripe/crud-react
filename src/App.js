@@ -42,15 +42,24 @@ class App extends Component {
     const list = [...this.state.list];
 
     //filter out item being deleted
-    const updatedList = list.filter(item => item.id !== id);
+    const updatedList = list.filter((item) => item.id !== id);
 
-    this.setState({list: updatedList});
+    this.setState({ list: updatedList });
   }
-  
+
   render() {
     return (
-      <div className="App">
-        <div>
+      <div>
+        <h1 className="app-title">MY LIST</h1>
+        <div
+          className="container"
+          style={{
+            padding: 30,
+            textAlign: "left",
+            maxWidth: 500,
+            margin: "auto",
+          }}
+        >
           Add an Item...
           <br />
           <input
@@ -59,14 +68,24 @@ class App extends Component {
             value={this.state.newItem}
             onChange={(e) => this.updateInput("newItem", e.target.value)}
           />
-          <button onClick={() => this.addItem()}>Add</button>
+          <button
+            className="add-btn btn-floating"
+            onClick={() => this.addItem()}
+          >
+            Add
+          </button>
           <br />
           <ul>
             {this.state.list.map((item) => {
               return (
                 <li key={item.id}>
                   {item.value}
-                  <button onClick={() => this.deleteItem(item.id)}>X</button>
+                  <button
+                    className="btn btn-floating"
+                    onClick={() => this.deleteItem(item.id)}
+                  >
+                    X
+                  </button>
                 </li>
               );
             })}
