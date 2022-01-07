@@ -3,13 +3,16 @@
 This project is about building a to-do list app using React.
 
 ## Project setup
+
 ```
 git clone https://github.com/SolTuripe/crud-react.git
 cd crud-react
 npm install
 ```
+
 ### In the project directory, you can run:
- `npm start`
+
+`npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
